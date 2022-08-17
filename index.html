@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Json js</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-4">1
+                <h2 class="mb-3">Users: <span class="users__span">0</span></h2>
+                
+                <ul class="users__wrapper">
+                    
+                </ul>
+            </div>
+            <div class="col-4">2
+                <h2 class="mb-3">Posts: <span class="posts__span">0</span></h2>
+                
+                <ul class="posts__wrapper">
+                    
+                </ul>
+            </div>
+            <div class="col-4">3
+                <h2 class="mb-3">Comments: <span class="comments__span">0</span></h2>
+                <ul class="comments__wrapper">
+                  
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    
+    <template id="users__temp">
+        <li class="border p-2">
+            <a class="fw-bold user__link mb-3" href="#"></a>
+            
+            <p>Email:
+                <a class="user__email" href="#"></a>
+            </p>
+            
+            <p>Country:
+                <span class="userCountry"></span>
+            </p>
+            
+            <p>Company:
+                <span class="user__company"></span>
+            </p>
+            
+            <p>Website:
+                <a class="user__website" href="#"></a>
+            </p>
+        </li>
+    </template>
+    
+    <template id="posts__temp">
+        <li class="border p-2">
+            <p class="posts__id"></p>
+            <a class="posts__link" href="#">salom</a>
+            
+            <p>Post:
+                <span class="posts__body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi necessitatibus quidem corrupti temporibus molestiae minima dolorem pariatur corporis minus nostrum?</span>
+            </p>
+        </li>
+    </template>
+    
+    <template id="comments__temp">
+        <li class="border p-2">
+            <p class="comments__id"></p>
+            
+            <p>Title
+                <span class="comments__name"></span>
+            </p>
+            
+            <p>Email:
+                <a class="comments__email" href=""></a>
+            </p>
+            
+            <p>Comment:
+                <span class="comments__comment"></span>
+            </p>
+        </li>
+    </template>
+    
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
