@@ -1,7 +1,7 @@
 body {
     background-image: linear-gradient(to right top, #e6185d, #d97235, #b9a64f, #a2ca95, #b3e2d6);
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
 }
 
 ul, li{
@@ -27,6 +27,7 @@ span {
 
 a {
     text-decoration: none;
+    margin-bottom: 5px;
 }
 
 p, span, a {
@@ -40,5 +41,11 @@ li {
 li:hover {
     transform: scale(1.03);
 }
+
+form {
+    margin-top: 150px;
+}
+
+
 
 

@@ -3,7 +3,8 @@ let elPostsWrapper = document.querySelector(".posts__wrapper");
 let elCommentsWrapper = document.querySelector(".comments__wrapper");
 let elUserSpan = document.querySelector(".users__span");
 let elPostSpan = document.querySelector(".posts__span");
-let elCommentsSpan = document.querySelector(".comments__span")
+let elCommentsSpan = document.querySelector(".comments__span");
+let elBtnss = document.querySelector(".buttonx")
 let elPostsTemp = document.querySelector("#posts__temp").content;
 let elUsersTemp = document.querySelector("#users__temp").content;
 let elCommentsTemp = document.querySelector("#comments__temp").content;
@@ -71,9 +72,11 @@ elUsersWrapper.addEventListener("click", function(event) {
     let dataId = event.target.dataset.userId;
     
     if (dataId) {
-        fetch(`https://jsonplaceholder.typicode.com/users/${dataId}/posts`)
+        fetch(`https://jsonplaceholder.typicode.com/posts`)
         .then(response => response.json())
-        .then(data => redderPosts(data))
+        .then(data => redderPosts(data.filter(function(item) {
+            return item.userId == dataId
+        })))
     }
 })
 
@@ -81,8 +84,20 @@ elPostsWrapper.addEventListener("click", function(event) {
     let datasettedId = event.target.dataset.postId;
     
     if (datasettedId) {
-        fetch(`https://jsonplaceholder.typicode.com/posts/${datasettedId}/comments`)
+        fetch(`https://jsonplaceholder.typicode.com/comments`)
         .then(response => response.json())
-        .then(data => renderComments(data))
+        .then(data => renderComments(data.filter(function(item) {
+            return item.postId == datasettedId
+        })))
     }
+})
+
+
+if(!localStorage.getItem('tooken')){
+    window.location.href = "/login.html"
+}
+
+elBtnss.addEventListener("click", function() {
+    localStorage.removeItem('tooken');
+    window.location.href = "/login.html"
 })
